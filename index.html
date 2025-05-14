@@ -47,7 +47,7 @@
         <script>
         var map = L.map('map', {
             zoomControl:true, maxZoom:28, minZoom:1
-        }).fitBounds([[42.04117044074496,15.975297592068994],[55.567210372871976,47.76669620396827]]);
+        }).fitBounds([[41.17707403178251,17.857795239808492],[54.61669510371477,48.94929753809342]]);
         var hash = new L.Hash(map);
         map.attributionControl.setPrefix('<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a> &middot; <a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> &middot; <a href="https://qgis.org">QGIS</a>');
         var autolinker = new Autolinker({truncate: {length: 30, location: 'smart'}});
@@ -691,6 +691,10 @@
                         <th scope="row">MIDWIN_24</th>\
                         <td>' + (feature.properties['MIDWIN_24'] !== null ? autolinker.link(feature.properties['MIDWIN_24'].toLocaleString()) : '') + '</td>\
                     </tr>\
+                    <tr>\
+                        <th scope="row">Interested</th>\
+                        <td>' + (feature.properties['Interested'] !== null ? autolinker.link(feature.properties['Interested'].toLocaleString()) : '') + '</td>\
+                    </tr>\
                 </table>';
             layer.bindPopup(popupContent, {maxHeight: 400});
         }
@@ -862,7 +866,7 @@
                 feature: layer.feature,
                 variables: {}
             };
-            layer.bindTooltip((layer.feature.properties['Admin3_ENn'] !== null?String('<div style="color: #323232; font-size: 7pt; font-weight: bold; font-family: \'Open Sans\', sans-serif;">' + layer.feature.properties['Admin3_ENn']) + '</div>':''), {permanent: true, offset: [-0, -16], className: 'css_ECHO_Selected_Hromadas_filtered_12'});
+            layer.bindTooltip((layer.feature.properties['Admin3_ENn'] !== null?String('<div style="color: #323232; font-size: 6pt; font-weight: bold; font-family: \'Open Sans\', sans-serif;">' + layer.feature.properties['Admin3_ENn']) + '</div>':''), {permanent: true, offset: [-0, -16], className: 'css_ECHO_Selected_Hromadas_filtered_12'});
             labels.push(layer);
             totalMarkers += 1;
               layer.added = true;
